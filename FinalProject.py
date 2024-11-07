@@ -100,16 +100,16 @@ def main():
                     continue
         elif choice == 2:
             while True:    
-                name=input("Enter your full name: ").strip()
+                name=input("Enter your full name: ")
                 # age=int(input("Enter your age: "))
                 age= datetime.now().year - year
                 if age<18:
                     print("You are not eligible to execute the program.")
                     continue
-                elif  name =="RabindraDhakal" and age>=18:
+                elif  name =="Rabindra Dhakal" and age>=18:
                     print(f"Greetings {name},you have admin rights.")
                     Userrights ="Admin"
-                elif name =="MiraVorne" and age>=18:
+                elif name =="Mira Vorne" and age>=18:
                     print(f"Greetings {name},you have super user rights.")   
                     Userrights="Superuser" 
                 else:
