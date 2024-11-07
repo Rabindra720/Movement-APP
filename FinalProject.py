@@ -56,7 +56,7 @@ def store_info(user_info,temperature,motion):
         "temperature":temperature,
         "motion":motion
     }     
-    with open("user_data.json","w") as file:
+    with open("user_data.json","a") as file:
         json.dump(data,file,indent=4)
     print("Data saved to json file in computer")    
 def main():  
@@ -119,24 +119,24 @@ def main():
         elif choice == 3:    
             while True:
                 print("Lets calculate the temperature.")
-                url ="https://api.thingspeak.com/channels/2578404/feeds.json?api_key=XSXF6WH7DAECB6S1&results=5&timezone=Europe/Helsinki"
+                url ="https://api.thingspeak.com/channels/2578404/feeds.json?api_key=XSXF6WH7DAECB6S1&results=20&timezone=Europe/Helsinki"
                 response = requests.get(url)
                 print(f"Status code: {response.status_code}")
                 data = response.json()
-                for entry in data["feeds"]:
-                    movement_value=entry["field1"]
-                    temperature_value=entry["field2"]
+                entry= random.choice(data["feeds"])
+                movement_value=entry["field1"]
+                temperature_value=entry["field2"]
                 temp=input("Enter the temperature in desired format(C or F): ")
                 if temp.lower() == "c":
-                    temperature1 = float(temperature_value)
-                    print(f"temperature is {temperature1}  degree celsius")
-                    temperature(temp,temperature1)
-                    break
+                        temperature1 = float(temperature_value)
+                        print(f"temperature is {temperature1}  degree celsius")
+                        temperature(temp,temperature1)
+                        break
                 elif temp.lower()== "f":
-                    temperature2 = float((float(temperature_value) * 9/5) + 32)
-                    print(f"temp is {temperature2} degree fahrenheit")
-                    temperature(temp,temperature2)
-                    break
+                        temperature2 = float((float(temperature_value) * 9/5) + 32)
+                        print(f"temp is {temperature2} degree fahrenheit")
+                        temperature(temp,temperature2)
+                        break
             Movement=movement_value  
             print(f"Movement value :{Movement}")
             user_info={
