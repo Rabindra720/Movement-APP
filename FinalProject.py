@@ -72,7 +72,7 @@ def main():
             fname=input("Enter your firstname: ")
             lname=input("Enter your lastname: ")
             date=(input("Enter any number: "))
-            print(usernamegenerate(fname,lname,date))  
+            print("Your username is :",usernamegenerate(fname,lname,date))  
             day=int(input("Enter the day of your birthday: "))
             month=int(input("Enter the month of your birthday: "))
             year=int(input("Enter the year of your birthday: "))
@@ -137,10 +137,18 @@ def main():
                         print(f"temp is {temperature2} degree fahrenheit")
                         temperature(temp,temperature2)
                         break
+                else:
+                    print("Invalid format.")
+                    continue    
             Movement=movement_value  
+            if Movement == "1":
+                Movement="Movement detected"
+            else:
+                Movement = "Movement not detected"    
             print(f"Movement value :{Movement}")
             user_info={
-                "User's Name":name,
+                "User's fullName":name,
+                "username":fname+lname+date,
                 "Age":age,
                 "Password":password1,
                 "Userright":Userrights,

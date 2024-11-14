@@ -1,0 +1,30 @@
+{
+    "user_inofrmation": {
+        "User's Name": "rujan dhakal",
+        "Age": 24,
+        "Password": ".=3MBh2o",
+        "Userright": "Viewer"
+    },
+    "temperature": "46.2",
+    "motion": "0"
+}{
+    "user_inofrmation": {
+        "User's fullName": "rujan",
+        "username": "rrdd12",
+        "Age": 24,
+        "Password": "b17SL[t|",
+        "Userright": "Viewer"
+    },
+    "temperature": "48.2",
+    "motion": "1"
+}{
+    "user_inofrmation": {
+        "User's fullName": "rujan dhakal",
+        "username": "rujandhka12",
+        "Age": 24,
+        "Password": "-MzQ/91e",
+        "Userright": "Viewer"
+    },
+    "temperature": "46.2",
+    "motion": "Movement not detected"
+}
